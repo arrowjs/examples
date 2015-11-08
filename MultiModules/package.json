@@ -1,0 +1,27 @@
+{
+  "name": "multimodules",
+  "version": "1.0.0",
+  "description": "Arrowjs.io web app that has many modules",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowjs/arr_examples.git"
+  },
+  "keywords": [
+    "Hello",
+    "World"
+  ],
+  "author": "Trinh Minh Cuong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowjs/arr_examples/issues"
+  },
+  "homepage": "https://github.com/arrowjs/arr_examples#readme",
+  "dependencies": {
+    "arrowjs": "^0.3.1"
+  }
+}
