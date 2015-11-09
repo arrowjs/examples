@@ -8,10 +8,22 @@ module.exports = function (controller,component,application) {
         res.render('index')
     };
 
+    controller.about = function (req,res) {
+        res.render('about')
+    };
+
+    controller.post = function (req,res) {
+        res.render('post')
+    };
+
+    controller.contact = function (req,res) {
+        res.render('contact')
+    };
+
     controller.changeTheme = function (req,res) {
         let theme = req.query.theme || "clean";
         application.setConfig("theme",theme).then(function () {
-            res.send("Current theme: " + application.getConfig('theme'));
+            res.render('change', {theme: application.getConfig('theme')});
         });
     }
 };

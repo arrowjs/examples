@@ -3,6 +3,4 @@ const Arrow = require('arrowjs');
 
 const application = new Arrow();
 
-application._config.port = 9000;
-
-application.start();
+application.start();  //listen on port 8000, to change port go to /config/env/development.js change port number
