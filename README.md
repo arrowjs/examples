@@ -1,5 +1,15 @@
 Arrowjs.io examples
 ==================
+To run HelloWorld example:
+```bash
+git clone https://github.com/arrowjs/examples.git
+cd examples
+cd HellWorld
+npm install
+node server.js
+```
+Open web browser then navigate to http://localhost:9000
+
 
 List of complete examples:
 * [HelloWorld](https://github.com/arrowjs/examples/tree/master/HelloWorld)
