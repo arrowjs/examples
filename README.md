@@ -1,7 +1,7 @@
 Arrowjs.io examples
 ==================
 To run HelloWorld example:
-```bash
+```sh
 git clone https://github.com/arrowjs/examples.git
 cd examples
 cd HellWorld

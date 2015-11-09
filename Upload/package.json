@@ -1,0 +1,26 @@
+{
+  "name": "Upload",
+  "version": "1.0.0",
+  "description": "Upload binary file to Arrowjs.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowjs/arr_examples.git"
+  },
+  "keywords": [
+    "theme",
+    "switch"
+  ],
+  "author": "Nguyen Van Phong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowjs/arr_examples/issues"
+  },
+  "homepage": "https://github.com/arrowjs/arr_examples#readme",
+  "dependencies": {
+    "arrowjs": "latest"
+  }
+}

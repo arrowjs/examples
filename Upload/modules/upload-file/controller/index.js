@@ -5,15 +5,15 @@ const fs = require('fs');
 const util = require('util');
 
 module.exports = function (controller, component, application) {
+    const uploadPath = application.arrFolder + 'public/upload/';
+    console.log(uploadPath);
 
     controller.index = function (req, res) {
         res.render('index');
     };
 
     controller.listFile = function (req, res, next) {
-        var postLastPath = __dirname.lastIndexOf('/');
-        var filePath = __dirname.substring(0, postLastPath);
-        fs.readdir(filePath + '/file/', function (err, listFiles) {
+        fs.readdir(uploadPath, function (err, listFiles) {
             for (let item in listFiles) {
                 console.log(listFiles[item]);
             }
@@ -26,9 +26,8 @@ module.exports = function (controller, component, application) {
 
     controller.uploadFile = function (req, res, next) {
         let form = new formidable.IncomingForm();
-        let postLastPath = __dirname.lastIndexOf('/');
-        let rootDir = __dirname.substring(0, postLastPath);
-        form.uploadDir = rootDir + "/file/";
+
+        form.uploadDir = uploadPath;
         form.keepExtensions = true;
 
         form.parse(req, function (err, fields, files) {
@@ -45,15 +44,13 @@ module.exports = function (controller, component, application) {
         });
 
         form.on('fileBegin', function (name, file) {
-            file.path = rootDir + "/file/" + file.name;
+            file.path = uploadPath + file.name;
             res.redirect('/list');
         });
     };
 
     controller.dowloadFile = function (req, res, next) {
-        let postLastPath = __dirname.lastIndexOf('/');
-        let rootDir = __dirname.substring(0, postLastPath);
-        let stream = fs.createReadStream(rootDir + '/file/' + req.params.file);
+        let stream = fs.createReadStream(uploadPath + req.params.file);
         stream.on('open', function () {
             stream.pipe(res);
         });
@@ -65,10 +62,8 @@ module.exports = function (controller, component, application) {
     };
 
     controller.deleteFile = function (req, res, next) {
-        let postLastPath = __dirname.lastIndexOf('/');
-        let rootDir = __dirname.substring(0, postLastPath);
-        let stream = fs.createReadStream(rootDir + '/file/' + req.params.file);
-        fs.unlinkSync(rootDir + '/file/' + req.params.file);
+        let stream = fs.createReadStream(uploadPath + req.params.file);
+        fs.unlinkSync(uploadPath + req.params.file);
         res.redirect('/list');
     };
 };
