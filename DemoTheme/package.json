@@ -1,0 +1,27 @@
+{
+  "name": "DemoTheme",
+  "version": "1.0.0",
+  "description": "Demo theme overwritting mechanism",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowjs/arr_examples.git"
+  },
+  "keywords": [
+    "Theme",
+    "Nunjucks"
+  ],
+  "author": "Trinh Minh Cuong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowjs/arr_examples/issues"
+  },
+  "homepage": "https://github.com/arrowjs/arr_examples#readme",
+  "dependencies": {
+    "arrowjs": "latest"
+  }
+}
