@@ -17,10 +17,10 @@ module.exports = function (controller, component, application) {
         fs.readdir(uploadPath, function (err, listFiles) {
             for (let item in listFiles) {
                 let info = {};
-                var stats = fs.statSync(uploadPath + listFiles[item]);
-                var fileSizeInBytes = stats["size"];
-                var fileSizeInKilobytes = fileSizeInBytes / 1024;
-                var datetime = new Date(stats["birthtime"]);
+                let stats = fs.statSync(uploadPath + listFiles[item]);
+                let fileSizeInBytes = stats["size"];
+                let fileSizeInKilobytes = fileSizeInBytes / 1024;
+                let datetime = new Date(stats["birthtime"]);
                 info["name"] = listFiles[item];
                 info["size"] = Math.ceil(fileSizeInKilobytes);
                 info["birthtime"] = datetime.getDate()+"/"+ (datetime.getMonth()+ 1) +"/"+datetime.getFullYear();
@@ -28,7 +28,6 @@ module.exports = function (controller, component, application) {
             }
             //console.log(data);
             res.render('index', {
-                items: listFiles,
                 data: data
             });
         });

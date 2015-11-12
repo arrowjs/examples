@@ -1,5 +1,5 @@
 {
-  "name": "Upload",
+  "name": "Upload-Blueimp",
   "version": "1.0.0",
   "description": "Upload binary file to Arrowjs.io",
   "main": "server.js",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/arrowjs/arr_examples#readme",
   "dependencies": {
-    "arrowjs": "^0.3.6"
+    "arrowjs": "^0.3.5",
+    "jquery-file-upload-middleware": "^0.1.7"
   }
 }
