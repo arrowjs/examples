@@ -19,10 +19,14 @@ module.exports = function (controller,component,application) {
      * Render about view using Nunjuck template
      */
     controller.about = function (req,res) {
+        var fun = function() {
+            console.log('Foo is great');
+        };
         res.render('about',
             {
                 title: 'About Arrowjs.io',
-                body: 'Arrowjs.io is framework that is fast, theme-able and extensible'
+                body: 'Arrowjs.io is framework that is fast, theme-able and extensible',
+                foo: fun
             })
     };
     /**
@@ -36,5 +40,7 @@ module.exports = function (controller,component,application) {
             , { name: 'documents', url: 'https://github.com/arrowjs/Documents' }
         ];
         res.json(repos);
-    }
+    };
+
+
 };

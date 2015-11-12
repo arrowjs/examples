@@ -1,0 +1,27 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "Simple Arrowjs.io web app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowjs/arr_examples.git"
+  },
+  "keywords": [
+    "Hello",
+    "World"
+  ],
+  "author": "Trinh Minh Cuong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowjs/arr_examples/issues"
+  },
+  "homepage": "https://github.com/arrowjs/arr_examples#readme",
+  "dependencies": {
+    "arrowjs": "latest"
+  }
+}
