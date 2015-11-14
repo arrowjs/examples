@@ -123,7 +123,7 @@
                             <th>
                                 Status
                             </th>
-                            <th>Option</th>
+                            <th></th>
                         </tr>
                         </thead>
 
@@ -287,13 +287,13 @@
                         .text('Upload')
                         .prop('disabled', !!data.files.error);
             }
-        }).on('fileuploadprogressall', function (e, data) {
+        }).on('fileuploadprogressall', function (e, data) {                                        // bắt tiến độ upload của file
             var progress = parseInt(data.loaded / data.total * 100, 10);
             $('#progress .progress-bar').css(
                     'width',
                     progress + '%'
             );
-        }).on('fileuploaddone', function (e, data) {
+        }).on('fileuploaddone', function (e, data) {                                               // Khi file dc upload xong sẽ trả về thông báo dữ liệu vào file
             $.each(data.result.files, function (index, file) {
                 //console.log(file);
                 if (file.url) {
