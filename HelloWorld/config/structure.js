@@ -1,8 +1,8 @@
 module.exports = {
-    modules: {
+    features: {
         path: {
-            folder: "/modules",
-            file: "module.js"
+            folder: "/features",
+            file: "feature.js"
         },
         controller: {
             path: {
@@ -12,7 +12,7 @@ module.exports = {
         },
         view : {
             path :{
-                folder : "view"
+                folder : ["/public/themes/:theme","view"]
             }
         },
         route: {
