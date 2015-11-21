@@ -30,7 +30,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/local">Local Call</a></li>
-                    <li><a href="/remote">Remote Call</a></li>
+                    <li><a href="/remote">Remote Socket</a></li>
+                    <li><a href="/remoteWeb">Remote Web Service</a></li>
                 </ul>
             </div>
         </div>
@@ -41,19 +42,22 @@
                 <h2>Demo call local vs remote service</h2>
                 <p>
                     This example get RSS from <a href="http://vnexpress.net">vnexpress.net</a> by two methods:
-                    <ul>
+                    <ol>
                     <li>
                         Execute module <a href="https://www.npmjs.com/package/feedparser">FeedParser</a> get RSS feed at local process
                     </li>
                     <li>
-                        Call to <a href="http://www.actionherojs.com/">ActionHero</a> socket server at 127.0.0.1:5000.<br>
-                        To start ActionHero, go to ActionHero, type <i>npm start</i><br>
-                        At ActionHero, there is an action named 'getRSS' that responses at 3 protocol:<br>
-                        http, web socket, socket<br>
-                        <a href="http://localhost:8080/api/getRSS?apiVersion=1">getRSS web protocol</a>
-
+                        Call to socket server of ActionHero at 127.0.0.1:5000<br>
+                        </a>
                     </li>
-                </ul>
+                    <li>
+                        Call to web service of ActionHero at <a href="http://localhost:8080/api/getRSS">localhost:8080/api/getRSS</a>
+                    </li>
+                </ol>
+                To start <a href="http://www.actionherojs.com/">ActionHero</a>, go to ActionHero, type <i>npm start</i><br>
+                At ActionHero, there is an action named 'getRSS' that responses at 3 protocol:<br>
+                http, web socket, socket<br>
+                <a href="http://localhost:8080/api/getRSS?apiVersion=1">getRSS web protocol
                 </p>
 
             </div><!--/.col-sm-6-->

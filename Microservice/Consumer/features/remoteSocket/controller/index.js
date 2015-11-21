@@ -3,11 +3,13 @@ const actionheroClient = require("actionhero-client");
 
 module.exports = function (controller,component,application) {
     controller.remoteCall = function (req,res) {
-        let client = new actionheroClient();
+        const client = new actionheroClient();
 
         client.on("error", function(err, data) {
             console.log(err);
-            res.render('remote', {error: err});
+            if (!res.headersSent) {
+                res.render('remote', {error: err});
+            }
          });
 
         client.on("end", function(){
@@ -20,10 +22,17 @@ module.exports = function (controller,component,application) {
 
         client.on("connected", function() {
             // get details about myself
-            console.log(client.details);
+            //console.log(client.details);
+
             // try an action
             client.action("getRSS", function(err, data, dur){
-                res.render('remote', {error: err, data: data});
+                let service = {remoteIP: client.details.remoteIP, remotePort: client.details.remotePort};
+                res.render('remote',
+                    {
+                        error: null,
+                        service: service,
+                        data: data
+                    });
             });
 
 
@@ -38,7 +47,8 @@ module.exports = function (controller,component,application) {
 
         client.connect({
             host: "127.0.0.1",
-            port: "5000"
+            port: "5000",
+            reconnectAttempts: 6
         });
 
     };

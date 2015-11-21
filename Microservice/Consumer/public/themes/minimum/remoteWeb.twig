@@ -30,8 +30,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
                     <li><a href="/local">Local Call</a></li>
-                    <li class="active"><a href="/remote">Remote Socket</a></li>
-                    <li><a href="/remoteWeb">Remote Web Service</a></li>
+                    <li><a href="/remote">Remote Socket</a></li>
+                    <li class="active"><a href="/remoteWeb">Remote Web Service</a></li>
                 </ul>
             </div>
         </div>
@@ -39,14 +39,13 @@
     <section class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Call to remove socket server</h2>
+                <h2>Call to remote web service</h2>
                 {% if error %}
-                    {{ error }} <br><br>
+                    {{ error }}<br><br>
                     <p>Make sure you start ActionHero by following command<br>
                     <pre>cd ActionHero<br>npm start</pre>
-                    </p>
                 {% else %}
-                    <h3>Connect to {{ service.remoteIP }} at port: {{ service.remotePort }}</h3>
+                    <h3>Server name <span class = "sun-flower">{{ data.serverInformation.serverName }}</span> at IP: {{ data.requesterInformation.remoteIP }}</h3>
                     <ul>
                         {% for item in data.rss %}
                             <li>{{ item.title }}<br/>
