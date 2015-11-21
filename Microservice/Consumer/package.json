@@ -1,0 +1,21 @@
+{
+  "name": "microservice",
+  "version": "1.0.0",
+  "description": "demo microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "microservice"
+  ],
+  "author": "Trinh Minh Cuong",
+  "license": "MIT",
+  "dependencies": {
+    "arrowjs": "*",
+    "actionhero-client": "^4.0.0",
+    "feedparser": "^1.1.4",
+    "request": "^2.67.0"
+  }
+}

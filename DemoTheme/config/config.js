@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+    port: process.env.PORT || 8000,
     key: 'site_setting',
     redis_prefix: 'arrowjs_',
     redis_key : {
@@ -42,7 +43,6 @@ module.exports = {
     pagination: {
         number_item: 20
     },
-    port: process.env.PORT || 8000,
     templateEngine: 'nunjucks',
     sessionSecret: 'ARROWJS',
     sessionCollection: 'sessions',
