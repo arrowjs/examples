@@ -41,20 +41,20 @@
                 <h2>Remote Call - Microservice</h2>
                 {% if error %}
                     {{ error }}
+                {% else %}
+                    <ul>
+                        {% for item in data.rss %}
+                            <li>{{ item.title }}<br/>
+                                {{ item.description | safe }}
+                            </li>
+                        {% endfor %}
+                    </ul>
                 {% endif %}
-                <ul>
-                    {% for item in data.rss %}
-                        <li>{{ item.title }}<br/>
-                            {{ item.description | safe }}
-                        </li>
-                    {% endfor %}
-                </ul>
             </div><!--/.col-sm-6-->
         </div>
     </section><!--/#about-us-->
 
     <script src="/themes/minimum/js/jquery.js"></script>
     <script src="/themes/minimum/js/bootstrap.min.js"></script>
-    <script src="/themes/minimum/js/main.js"></script>
 </body>
 </html>
