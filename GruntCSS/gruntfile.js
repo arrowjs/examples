@@ -16,7 +16,8 @@ module.exports = function(grunt) {
     let theme = 'minimum';
     let themeFinal = 'min';
     let themeTemp = 'temp';
-    let themePath = 'public/themes/';
+    let themeFolder = '/themes/';
+    let themePath = 'public' + themeFolder;
     // Project configuration.
     grunt.initConfig({
 
@@ -77,7 +78,7 @@ module.exports = function(grunt) {
                 csspath: __dirname + '/public'
             },
             dist: {
-                src: [themePath + themeTemp + '{,*/}*.html'],
+                src: [themePath + themeTemp + '/**/*.html'],
                 dest: themePath + themeFinal + '/css/tidy.css'
             }
         },
@@ -114,8 +115,8 @@ module.exports = function(grunt) {
                 src: [themePath + themeFinal + '/**/*.twig'],
                 overwrite: true,
                 replacements: [{
-                    from: /\/themes\/minimum\//g,
-                    to: '/themes/min/'
+                    from: new RegExp(themeFolder + theme + '/', 'g'),
+                    to: themeFolder + themeFinal + '/'
                 }]
             }
         },
