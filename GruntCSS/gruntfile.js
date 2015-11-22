@@ -111,21 +111,15 @@ module.exports = function(grunt) {
 
         replace: {
             oldPath: {
-                options: {
-                    patterns: [
-                        {
-                            match: /\/themes\/minimum\//g,
-                            replacement: '/themes/min/'
-                        }
-                    ]
-                },
-                files: [
-                    {expand: true, flatten: true,
-                        src: [themePath + themeFinal + '/**/*.twig'],
-                        dest: themePath  + themeFinal + '/'}
-                ]
+                src: [themePath + themeFinal + '/**/*.twig'],
+                overwrite: true,
+                replacements: [{
+                    from: /\/themes\/minimum\//g,
+                    to: '/themes/min/'
+                }]
             }
         },
+
 
         compare_size: {
             files: [
@@ -145,11 +139,11 @@ module.exports = function(grunt) {
         'copy:resource2Temp',
         'copy:renameTwig2Html',
         'uncss:dist',
-        /*'cssmin',
+        'cssmin',
         'processhtml',
         'copy:renameHtml2Twig',
         'replace:oldPath',
-        'clean:tempHTML',
+        /*'clean:tempHTML',
         'copy:resource2Final',
         'clean:temp',
         'compare_size'*/
