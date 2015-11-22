@@ -77,7 +77,6 @@ module.exports = function(grunt) {
                 csspath: __dirname + '/public'
             },
             dist: {
-               //src: [themePath + themeTemp + 'index.html', themePath + themeTemp + 'more.html'],
                 src: [themePath + themeTemp + '{,*/}*.html'],
                 dest: themePath + themeFinal + '/css/tidy.css'
             }
@@ -146,14 +145,14 @@ module.exports = function(grunt) {
         'copy:resource2Temp',
         'copy:renameTwig2Html',
         'uncss:dist',
-        'cssmin',
+        /*'cssmin',
         'processhtml',
         'copy:renameHtml2Twig',
         'replace:oldPath',
         'clean:tempHTML',
         'copy:resource2Final',
         'clean:temp',
-        'compare_size'
+        'compare_size'*/
     ]);
 
 };
