@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Arrowjs</title>
-    <!-- build:css css/tidy.css -->
+    <title>About</title>
+    <!-- build:css /themes/min/css/tidy.css -->
     <link href="/themes/minimum/css/bootstrap.min.css" rel="stylesheet">
     <link href="/themes/minimum/css/font-awesome.min.css" rel="stylesheet">
     <link href="/themes/minimum/css/main.css" rel="stylesheet">
@@ -30,9 +30,8 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
-                    <li class="active"><a href="/more">More</a></li>
-                    <li><a href="/nake">Nake</a></li>
-                    <li><a href="/json">JSON</a></li>
+                    <li><a href="/more">More</a></li>
+                    <li class="active"><a href="/about">About</a></li>
                 </ul>
             </div>
         </div>
@@ -40,13 +39,8 @@
     <section class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>{{ title }}</h2>
-                <ol>
-                    {% for item in repos %}
-                        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-                    {% endfor %}
-                </ol>
-                <p>See <code>/public/themes/more.twig</code></p>
+                <h2 class="peter-river">This view template in sub folder of theme</h2>
+                <p>Test if grunt CSS works</p>
             </div><!--/.col-sm-6-->
         </div>
     </section><!--/#about-us-->
