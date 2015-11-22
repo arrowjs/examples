@@ -41,7 +41,8 @@
                     <li>The Grunt task <a href="https://github.com/addyosmani/grunt-uncss">grunt-uncss</a> will parse all <code>.twig</code> files in <code>public\themes\minimum</code>
                         to find all referenced CSS files then remove unused CSS.</li>
                     <li>To run, in root folder of project type <code>grunt</code></li>
-                    <li>See more <a href="https://github.com/giakki/uncss">uncss</a></li>
+                    <li>See more <a href="https://github.com/giakki/uncss">uncss</a>,
+                        <a href="https://www.npmjs.com/package/grunt-processhtml">grunt-processhtml</a></li>
                 </ul>
                 <code>public\themes\minimum</code> structure
                 <pre>
@@ -62,9 +63,10 @@
                 grunt task will create <code>public\themese\min</code> folder.
                 All CSS will be combined and minified to <code>public\themese\min\css\tidy.css</code>
                 <pre>
-+-- css
-│   \-- tidy.css
-+-- The rest will be same as before
+\-- min
+   +-- css
+   │   \-- tidy.css
+   +-- The rest will be same as before
 
                 </pre>
 

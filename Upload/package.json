@@ -11,8 +11,8 @@
     "url": "git+https://github.com/arrowjs/arr_examples.git"
   },
   "keywords": [
-    "theme",
-    "switch"
+    "upload",
+    "file"
   ],
   "author": "Nguyen Van Phong",
   "license": "MIT",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/arrowjs/arr_examples#readme",
   "dependencies": {
-    "arrowjs": "^0.3.6"
+    "arrowjs": "^0.3.6",
+    "formidable": "^1.0.17"
   }
 }
