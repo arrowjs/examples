@@ -32,12 +32,45 @@
         <div class="row">
             <div class="col-sm-6">
                 <h2 class = "turquoise">Grunt CSS</h2>
-                <p>
-                    Grunt CSS
-                </p>
             </div><!--/.col-sm-6-->
         </div>
-    </section><!--/#about-us-->
+        <div class="row">
+            <div class="col-sm-12">
+                This example shows how to use Grunt to remove unused CSS, them combine and compress to single CSS file.
+                <ul>
+                    <li>The Grunt task <a href="https://github.com/addyosmani/grunt-uncss">grunt-uncss</a> will parse all <code>.twig</code> files in <code>public\themes\minimum</code>
+                        to find all referenced CSS files then remove unused CSS.</li>
+                    <li>To run, in root folder of project type <code>grunt</code></li>
+                    <li>See more <a href="https://github.com/giakki/uncss">uncss</a></li>
+                </ul>
+                <code>public\themes\minimum</code> structure
+                <pre>
+\-- minimum
+    +-- css
+    │   +-- bootstrap.min.css
+    │   +-- font-awesome.min.css
+    │   \-- main.css
+    +-- fonts
+    +-- images
+    +-- index.twig
+    +-- js
+    │   +-- *.js
+    +-- more.twig
+    \-- sub
+        \-- about.twig
+</pre>
+                grunt task will create <code>public\themese\min</code> folder.
+                All CSS will be combined and minified to <code>public\themese\min\css\tidy.css</code>
+                <pre>
++-- css
+│   \-- tidy.css
++-- The rest will be same as before
+
+                </pre>
+
+            </div>
+        </div>
+    </section>
 
     <script src="/themes/min/js/jquery.js"></script>
     <script src="/themes/min/js/bootstrap.min.js"></script>

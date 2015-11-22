@@ -1,11 +1,3 @@
-/*
- * grunt-uncss
- * https://github.com/addyosmani/grunt-uncss
- *
- * Copyright (c) 2015 Addy Osmani
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 module.exports = function(grunt) {
@@ -13,6 +5,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
     require('time-grunt')(grunt);
 
+    //TODO: Make this better! read config/structure.js and config/view.js into theme, themeFinal and themeTemp
     let theme = 'minimum';
     let themeFinal = 'min';
     let themeTemp = 'temp';
@@ -29,7 +22,7 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            //Copy resource to temp directory
+            //Copy resource original theme folder to temp folder
             resource2Temp: {
                 files: [{
                     expand: true,
@@ -38,7 +31,7 @@ module.exports = function(grunt) {
                     dest: themePath + themeTemp
                 }]
             },
-            //Copy twig file to temp directory then rename
+            //Copy twig files from original theme folder to temp folder then rename *.twig to *.html
             renameTwig2Html: {
                 files: [{
                     expand: true,
@@ -50,7 +43,7 @@ module.exports = function(grunt) {
                     }
                 }]
             },
-            //Rename *html files in final theme
+            //Rename *html files to *twig file in destination folder 'min'
             renameHtml2Twig: {
                 files: [{
                     expand: true,
@@ -62,7 +55,7 @@ module.exports = function(grunt) {
                     }
                 }]
             },
-            //Copy resource to temp directory
+            //Copy resource from original theme folder to destination folder
             resource2Final: {
                 files: [{
                     expand: true,
@@ -72,7 +65,7 @@ module.exports = function(grunt) {
                 }]
             }
         },
-
+        //Remove unused CSS then combine into one file tidy.css
         uncss: {
             options: {
                 csspath: __dirname + '/public'
@@ -82,7 +75,7 @@ module.exports = function(grunt) {
                 dest: themePath + themeFinal + '/css/tidy.css'
             }
         },
-
+        //Change link from original css to tidy.css
         processhtml: {
             dist: {
                 options: {
@@ -97,7 +90,7 @@ module.exports = function(grunt) {
                 }]
             }
         },
-
+        //Minify tidy.css
         cssmin: {
             dist: {
                 options: {
@@ -109,7 +102,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-
+        //Replace link to original theme resource to destination theme resource
         replace: {
             oldPath: {
                 src: [themePath + themeFinal + '/**/*.twig'],
@@ -121,7 +114,7 @@ module.exports = function(grunt) {
             }
         },
 
-
+        //Compare size of all original CSS files with an output CSS file, tidy.css
         compare_size: {
             files: [
                 themePath + theme + '/css/**',
@@ -134,7 +127,7 @@ module.exports = function(grunt) {
     // Actually load this plugin's task(s).
     grunt.loadTasks('tasks');
 
-    // By default, lint and run all tests.
+    // Run all tasks with user types `grunt`
     grunt.registerTask('default', [
         'clean:output',
         'copy:resource2Temp',
