@@ -143,10 +143,10 @@ module.exports = function(grunt) {
         'processhtml',
         'copy:renameHtml2Twig',
         'replace:oldPath',
-        /*'clean:tempHTML',
+        'clean:tempHTML',
         'copy:resource2Final',
         'clean:temp',
-        'compare_size'*/
+        'compare_size'
     ]);
 
 };
