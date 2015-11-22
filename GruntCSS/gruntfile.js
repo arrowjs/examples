@@ -123,7 +123,7 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, flatten: true,
                         src: [themePath + themeFinal + '/**/*.twig'],
-                        dest: themePath  + themeFinal}
+                        dest: themePath  + themeFinal + '/'}
                 ]
             }
         },
@@ -150,10 +150,10 @@ module.exports = function(grunt) {
         'processhtml',
         'copy:renameHtml2Twig',
         'replace:oldPath',
-        /*'clean:tempHTML',
+        'clean:tempHTML',
         'copy:resource2Final',
         'clean:temp',
-        'compare_size'*/
+        'compare_size'
     ]);
 
 };
