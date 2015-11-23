@@ -75,7 +75,6 @@ Giới thiệu ví dụ Upload-Blueimp được lấy mẫu từ ví dụ : http
             - một đoạn javascript để xử lý sự kiện cho thẻ input có id="fileupload" và name="files[]"
 
 
-            ~~~javascrip
               	$(function () {
                   'use strict';
                   // Change this to the location of your server-side upload handler:
@@ -98,20 +97,18 @@ Giới thiệu ví dụ Upload-Blueimp được lấy mẫu từ ví dụ : http
                   }).prop('disabled', !$.support.fileInput)
                     .parent().addClass($.support.fileInput ? undefined : 'disabled');
               });
-           ~~~
+              
 
         Ở đây dữ liệu được upload lên theo url = '/upload';
         Kiểu dữ liệu là  dataType: 'json',
         Ở ví dụ basic file được upload tự động theo mặc định, còn nếu bạn không muốn upload tự động bạn thiết lập thuộc tính autoUpload: false như ví dụ basic-plus
         Sau khi upload xong dữ liệu server trả về client sẽ được nhận tại 
 
-        ~~~javascrip
                     done: function (e, data) {
                         $.each(data.result.files, function (index, file) {
                             $('<p/>').text(file.name).appendTo('#files');
                         });
                     }
-        ~~~~
 
 		 Thông tin file upload được trả về tại đối số file (bạn có thể console.log(file) để biết thêm chi tiết )
 		 Đối tượng progressall để nhận lại tiến trình upload file dùng hiển thị ra progress-bar
