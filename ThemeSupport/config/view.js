@@ -11,8 +11,5 @@ module.exports = {
     pagination: {
         number_item: 20
     },
-    theme: "clean",
-    viewEngine : {
-
-    }
+    theme: "clean"
 };

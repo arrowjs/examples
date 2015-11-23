@@ -4,28 +4,14 @@ module.exports = function (controller,component,application) {
     /**
      * Render index view with links to other views
      */
-    let repos = [
-        { name: 'arrowjs core', url: 'https://github.com/arrowjs/ArrowjsCore' }
-        , { name: 'arrowjs cms', url: 'https://github.com/arrowjs/ArrowCMS' }
-        , { name: 'examples', url: 'https://github.com/arrowjs/examples' }
-        , { name: 'documents', url: 'https://github.com/arrowjs/Documents' }
-    ];
-
     controller.index = function (req,res) {
         res.render('index',
             {
-                message: 'Arrowjs runs fast as arrow',
-                features: [
-                    'Fast',
-                    'Simple - Yeoman Generator',
-                    'Feature loosely couple',
-                    'Theme-able',
-                    'CMS ready',
-                    'RBAC',
-                    'WebSocket',
-                    'ES6 ready',
-                    'Content Cache',
-                    'Scalable'
+                title: 'Hello World app',
+                links: [
+                    {title: 'About this app', link: 'about'},
+                    {title: 'Repositories', link: 'repos'},
+                    {title: 'Get App folder', link: 'raw'}
                 ]
             }
         )
@@ -33,27 +19,27 @@ module.exports = function (controller,component,application) {
     /**
      * Render about view using Nunjuck template
      */
-    controller.more = function (req,res) {
-        var fun = function() {
-            console.log('Foo is great');
-        };
-        res.render('more',
+    controller.about = function (req,res) {
+        res.render('about',
             {
-                title: 'More cool stuffs',
-                repos: repos,
-                foo: fun
-            });
-    };
-
-    controller.nake = function (req,res) {
-        res.render('nake');
+                title: 'About Arrowjs.io',
+                body: 'Arrowjs.io is framework that is fast, theme-able and extensible'
+            })
     };
     /**
      * return JSON list of github repositories of Arrowjs.io
      */
-    controller.json = function(req, res) {
+    controller.repos = function(req, res) {
+        let repos = [
+            { name: 'arrowjs core', url: 'https://github.com/arrowjs/ArrowjsCore' }
+            , { name: 'arrowjs cms', url: 'https://github.com/arrowjs/ArrowCMS' }
+            , { name: 'examples', url: 'https://github.com/arrowjs/examples' }
+            , { name: 'documents', url: 'https://github.com/arrowjs/Documents' }
+        ];
         res.json(repos);
     };
 
-
+    controller.raw = function(req, res) {
+        res.send(application.arrFolder);
+    }
 };

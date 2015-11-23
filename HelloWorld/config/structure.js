@@ -12,7 +12,7 @@ module.exports = {
         },
         view : {
             path :{
-                folder : ["/public/themes/:theme","view"]
+                folder : "view"
             }
         },
         route: {

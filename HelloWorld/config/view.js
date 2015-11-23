@@ -11,5 +11,5 @@ module.exports = {
     pagination: {
         number_item: 20
     },
-    theme: "minimum"
+    theme: "default"
 };
