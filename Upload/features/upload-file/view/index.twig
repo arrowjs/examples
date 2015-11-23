@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Upload Arrowjs.io</title>
+    <title>Demo Upload File</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -15,7 +15,7 @@
 
 <div class="container kv-main">
     <div class="jumbotron">
-        <h1>Arrowjs + BleueImp + Formidable</h1>
+        <h1>Demo Upload File</h1>
     </div>
     <form action="/" method="post" enctype="multipart/form-data">
         <input id="fileToUpload" name="fileToUpload" class="file" type="file" multiple data-min-file-count="1">
@@ -42,7 +42,7 @@
                     {% for item in data %}
                         <tr class="active">
                             <td><p><strong>{{ loop.index }}</strong></p></td>
-                            <td><font color="green"><strong>{{ item.name }}</strong></td>
+                            <td><strong style="color: green">{{ item.name }}</strong></td>
                             <td><p>{{ item.birthtime }}</p></td>
                             <td><p>{{ item.size }}</p></td>
                             <td><p>Kb</p>             </td>
@@ -52,6 +52,7 @@
                     {% endfor %}
                     </tbody>
                 </table>
+            </div>
             </div>
     </form>
     <div class="panel panel-default">
