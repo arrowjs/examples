@@ -1,12 +1,11 @@
 'use strict';
 
 const formidable = require('formidable');
-const fs = require('fs');
+const fs = require('fs-extra');
 const util = require('util');
 
 module.exports = function (controller, component, application) {
     const uploadPath = application.arrFolder + 'public/upload/';
-    console.log(uploadPath);
 
     controller.index = function (req, res) {
         res.render('index');
@@ -15,6 +14,11 @@ module.exports = function (controller, component, application) {
     controller.listFile = function (req, res, next) {
         let data = [];
         fs.readdir(uploadPath, function (err, listFiles) {
+            if (listFiles === undefined) {
+                fs.emptyDir(uploadPath, function (err) {
+                    if (!err) console.log('success!')
+                });
+            }
             for (let item in listFiles) {
                 let info = {};
                 let stats = fs.statSync(uploadPath + listFiles[item]);
@@ -23,10 +27,9 @@ module.exports = function (controller, component, application) {
                 let datetime = new Date(stats["birthtime"]);
                 info["name"] = listFiles[item];
                 info["size"] = Math.ceil(fileSizeInKilobytes);
-                info["birthtime"] = datetime.getDate()+"/"+ (datetime.getMonth()+ 1) +"/"+datetime.getFullYear();
+                info["birthtime"] = datetime.getDate() + "/" + (datetime.getMonth() + 1) + "/" + datetime.getFullYear();
                 data.push(info);
             }
-            //console.log(data);
             res.render('index', {
                 data: data
             });
@@ -74,7 +77,7 @@ module.exports = function (controller, component, application) {
         //});
 
         // example dowload 2
-        res.download(uploadPath + req.params.file, function(err){
+        res.download(uploadPath + req.params.file, function (err) {
             if (!err) return; // file sent
             if (err && err.status !== 404) return next(err); // non-404 error
             // file for download not found
@@ -85,7 +88,7 @@ module.exports = function (controller, component, application) {
 
     controller.deleteFile = function (req, res, next) {
         console.log("delete : ", req.params.file);
-        fs.unlink(uploadPath + req.params.file,function(){
+        fs.unlink(uploadPath + req.params.file, function () {
             res.redirect('/');
         });
     };
