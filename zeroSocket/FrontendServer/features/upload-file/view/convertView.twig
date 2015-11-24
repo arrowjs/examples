@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Demo Upload File</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+{{ useSocket() }}
+<script>
+    socket.on('converted', function (msg) {
+        $("#message").html(
+                '<div class="alert alert-success">'+
+                '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+                '<strong>Success</strong>  Convert successfully' +
+                '</div>'
+        );
+        $("#convertedImage").attr("src",msg.link)
+    })
+    socket.on('convertError', function (msg) {
+        console.log(msg);
+        $("#message").html(
+        '<div class="alert alert-danger">'+
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+            '<strong>Error</strong> ' + msg.message +
+        '</div>'
+        );
+    })
+</script>
+<div class="container kv-main">
+    <div class="jumbotron">
+        <h1>Converting...</h1>
+    </div>
+    <div id="message">
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img id="defaultImage" src="{{ defaultLink }}"  style="max-width: 100%"/>
+        </div>
+        <div class="col-md-6">
+            <img id="convertedImage" src="/img/loading-x.gif" style="max-width: 100%"/>
+        </div>
+    </div>
+    <br>
+</div>
+</body>
+
+</html>
