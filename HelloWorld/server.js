@@ -1,5 +1,5 @@
 'use strict';
-const Arrow = require('arrowjs');
+const Arrow = require('../..');
 
 const application = new Arrow();
 application.start();
