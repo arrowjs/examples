@@ -1,0 +1,21 @@
+<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://arrowjs.io"><img src="/themes/minimum/images/logo.png" alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li {% if activemenu=='index' %}class="active"{% endif %}><a href="/">Home</a></li>
+                <li {% if activemenu=='logic' %}class="active"{% endif %}><a href="/logic">Logic</a></li>
+                <li {% if activemenu=='inherit' %}class="active"{% endif %}><a href="/inherit">Inherit</a></li>
+                <li {% if activemenu=='call' %}class="active"{% endif %}><a href="/call">Call</a></li>
+            </ul>
+        </div>
+    </div>
+</header>

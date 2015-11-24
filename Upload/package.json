@@ -22,6 +22,7 @@
   "homepage": "https://github.com/arrowjs/arr_examples#readme",
   "dependencies": {
     "arrowjs": "^0.3.6",
-    "formidable": "^1.0.17"
+    "formidable": "^1.0.17",
+    "fs-extra": "^0.26.2"
   }
 }

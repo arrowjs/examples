@@ -1,0 +1,16 @@
+{% set activemenu = "call" %}
+{% extends "parent.twig" %}
+{% block content %}
+    This will call function passed as parameter from controller.<br>
+    At controller <code>feature/index/controller/index.js</code>
+    <pre>controller.call = function (req,res) {
+res.render('call', {func: foo});</pre>
+
+    <br>
+    At view template file<code>public/themes/minimum/call.twig</code>
+
+    <pre>{% raw %}<code>{{  func() }}</code>{% endraw %}</pre>
+    <br>
+    See <a href="https://mozilla.github.io/nunjucks/templating.html#function-calls">Function Calls</a>
+    <code>{{  func() }}</code>
+{% endblock %}

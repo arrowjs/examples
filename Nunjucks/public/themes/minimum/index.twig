@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="/themes/minimum/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/themes/minimum/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/themes/minimum/css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/themes/minimum/js/html5shiv.js"></script>
+    <script src="/themes/minimum/js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/themes/minimum/images/ico/favicon.ico">
+</head><!--/head-->
+<body>
+    {% set activemenu = "index" %}
+    {% include 'navbar.twig'%}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>{{ message }}</h2>
+
+
+            </div><!--/.col-sm-6-->
+        </div>
+    </section><!--/#about-us-->
+
+    <script src="/themes/minimum/js/jquery.js"></script>
+    <script src="/themes/minimum/js/bootstrap.min.js"></script>
+</body>
+</html>
