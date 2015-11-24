@@ -14,37 +14,22 @@
     <link rel="shortcut icon" href="/themes/minimum/images/ico/favicon.ico">
 </head><!--/head-->
 <body>
-    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://arrowjs.io"><img src="/themes/minimum/images/logo.png" alt="logo"></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a></li>
-                    <li class="active"><a href="/more">More</a></li>
-                    <li><a href="/nake">Nake</a></li>
-                    <li><a href="/json">JSON</a></li>
-                </ul>
-            </div>
-        </div>
-    </header><!--/header-->
+    {% set activemenu = "logic" %}
+    {% include 'navbar.twig'%}
     <section class="container">
         <div class="row">
             <div class="col-sm-6">
                 <h2>{{ title }}</h2>
+                <p>Nunjucks supports if then for</p>
                 <ol>
                     {% for item in repos %}
                         <li><a href="{{ item.url }}">{{ item.name }}</a></li>
                     {% endfor %}
                 </ol>
-                <p>See <code>/public/themes/more.twig</code></p>
+                {% raw %}
+                Raw text will {{ not be processed }}
+                {% endraw %}
+                <p>See <code>/public/themes/minimum/logic.twig</code></p>
             </div><!--/.col-sm-6-->
         </div>
     </section><!--/#about-us-->

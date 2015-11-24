@@ -30,30 +30,19 @@ module.exports = function (controller,component,application) {
             }
         )
     };
-    /**
-     * Render about view using Nunjuck template
-     */
-    controller.more = function (req,res) {
-        var fun = function() {
-            console.log('Foo is great');
-        };
-        res.render('more',
-            {
-                title: 'More cool stuffs',
-                repos: repos,
-                foo: fun
-            });
+    controller.logic = function (req,res) {
+        res.render('logic', {repos: repos});
     };
 
-    controller.nake = function (req,res) {
-        res.render('nake');
-    };
-    /**
-     * return JSON list of github repositories of Arrowjs.io
-     */
-    controller.json = function(req, res) {
-        res.json(repos);
+    controller.inherit = function (req,res) {
+        res.render('inherit');
     };
 
+    let foo = function() {
+        return application.arrFolder;
+    };
+    controller.call = function (req,res) {
+        res.render('call', {func: foo});
+    };
 
 };

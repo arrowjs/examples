@@ -13,19 +13,24 @@ module.exports = function (component,application) {
                 handler: component.controllers.index
             }
         },
-        "/more": {
+        "/logic": {
             get : {
-                handler: component.controllers.more
+                handler: component.controllers.logic
             }
         },
-        "/nake": {
+        "/inherit": {
             get : {
-                handler: component.controllers.nake
+                handler: component.controllers.inherit
             }
         },
-        "/json": {
+        "/call": {
             get : {
-                handler: component.controllers.json
+                handler: component.controllers.call
+            }
+        },
+        "/async": {
+            get : {
+                handler: component.controllers.asyc
             }
         }
     }

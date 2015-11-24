@@ -10,23 +10,22 @@
     <!--[if lt IE 9]>
     <script src="/themes/minimum/js/html5shiv.js"></script>
     <script src="/themes/minimum/js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="/themes/minimum/images/ico/favicon.ico">
 </head><!--/head-->
 <body>
-    {% set activemenu = "index" %}
-    {% include 'navbar.twig'%}
-    <section class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h2>{{ message }}</h2>
+{% include 'navbar.twig'%}
+<section class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>{{ message }}</h2>
+            {% block content %}{% endblock %}
 
+        </div><!--/.col-sm-6-->
+    </div>
+</section><!--/#about-us-->
 
-            </div><!--/.col-sm-6-->
-        </div>
-    </section><!--/#about-us-->
-
-    <script src="/themes/minimum/js/jquery.js"></script>
-    <script src="/themes/minimum/js/bootstrap.min.js"></script>
+<script src="/themes/minimum/js/jquery.js"></script>
+<script src="/themes/minimum/js/bootstrap.min.js"></script>
 </body>
 </html>

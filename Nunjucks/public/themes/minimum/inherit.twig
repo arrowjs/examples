@@ -1,0 +1,16 @@
+{% set activemenu = "inherit" %}
+{% extends "parent.twig" %}
+{% block content %}
+<code>inherit.twig</code> inherits <code>from parent.twig</code>
+
+    <!--display sample code to end-user -->
+<div>
+<pre>{% raw %}{% extends "parent.twig" %}
+{% block content %}
+...Write something here
+{% endblock %}
+{% endraw %}</pre>
+</div>
+    <!--end of display sample code to end-user -->
+
+{% endblock %}
