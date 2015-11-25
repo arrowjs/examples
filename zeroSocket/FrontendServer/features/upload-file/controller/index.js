@@ -29,16 +29,16 @@ module.exports = function (controller, component, application) {
     };
 
     controller.uploadFile = function (req, res, next) {
+        let socketId ="";
         let form = new formidable.IncomingForm();
         form.uploadDir = uploadPath;
         form.keepExtensions = true;
 
-        form.parse(req, function (err, fields, files) {
-            //res.writeHead(200, {'content-type': 'text/plain'});
-            //res.write('received upload:\n\n');
-            //res.end(util.inspect({fields: fields, files: files}));
+        form.parse(req, function (err,fields,files) {
+            if(fields.socketId) {
+                socketId = fields.socketId;
+            }
         });
-
         form.on('progress', function (bytesReceived, bytesExpected) {
             let percent_complete = (bytesReceived / bytesExpected) * 100;
             let progress = percent_complete.toFixed(2);
@@ -55,9 +55,9 @@ module.exports = function (controller, component, application) {
                 }
             }, function (err, data) {
                 if (err) {
-                    application.io.emit("convertError", err)
+                    application.io.to(socketId).emit("convertError", err)
                 } else {
-                    application.io.emit("converted", data)
+                    application.io.to(socketId).emit("converted", data)
                 }
             })
         });

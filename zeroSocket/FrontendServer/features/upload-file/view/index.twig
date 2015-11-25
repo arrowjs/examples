@@ -24,6 +24,7 @@
     <div class="row">
         <form action="/" method="post" enctype="multipart/form-data">
             <input id="fileToUpload" name="fileToUpload" class="file" type="file" multiple data-min-file-count="1">
+            <input id="socketId" type="hidden" name="socketId"/>
         </form>
     </div>
 
@@ -41,6 +42,11 @@
 </body>
 {{ useSocket() }}
 <script>
+    $(function () {
+        setTimeout(function () {
+            $("#socketId").val(socket.id);
+        },100);
+    });
     socket.on('converted', function (msg) {
         $("#message").html(
                 '<div class="alert alert-success">' +
@@ -61,7 +67,7 @@
 </script>
 <script>
     $('#fileToUpload').fileinput({
-        showPreview :false
+        showPreview: false
     });
 
     var files;
@@ -89,13 +95,12 @@
         $.each(files, function (key, value) {
             data.append(key, value);
         });
-
+        data.append("socketId",$("#socketId").val());
         $.ajax({
             url: '/',
             type: 'POST',
             data: data,
             cache: false,
-            dataType: 'json',
             processData: false, // Don't process the files
             contentType: false, // Set content type to false as jQuery will tell the server its a query string request
             success: function (data, textStatus, jqXHR) {
