@@ -13,7 +13,7 @@ module.exports = function (action,component,application) {
             file = uploadPath + data.link;
 
             convertedFile = uploadPath + "convert/" + data.link;
-            im.convert([file,"-negate","-threshold", "0", "-negate",convertedFile], function (err,stdout,stderr) {
+            im.convert([file,"-colorspace","Gray",convertedFile], function (err,stdout,stderr) {
                 if(stderr){
                     cb({error : true, message: stderr.toString()})
                 } else {

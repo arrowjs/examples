@@ -8,7 +8,7 @@
 module.exports = {
     image: {
         "path": {
-            "folder": "/image",
+            "folder": "/convertImage",
             "file": "config.js",
             singleton : true
         },

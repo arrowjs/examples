@@ -31,6 +31,7 @@ module.exports = function (controller, component, application) {
     controller.uploadFile = function (req, res, next) {
         let socketId ="";
         let form = new formidable.IncomingForm();
+        let fileName;
         form.uploadDir = uploadPath;
         form.keepExtensions = true;
 
@@ -46,7 +47,10 @@ module.exports = function (controller, component, application) {
 
         form.on('fileBegin', function (name, file) {
             // update name file
-            let fileName = path.relative(uploadPath, file.path);
+            fileName = path.relative(uploadPath, file.path);
+        });
+
+        form.on("end", function () {
             res.send({link: fileName});
             application.services.convertImage.send({
                 action: "image.convert",
@@ -60,7 +64,7 @@ module.exports = function (controller, component, application) {
                     application.io.to(socketId).emit("converted", data)
                 }
             })
-        });
+        })
     };
 
 
