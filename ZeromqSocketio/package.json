@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "arrowjs" : "*",
-    "arrow-zeromq": "0.0.3",
+    "arrow-zeromq": "*",
     "formidable": "^1.0.17",
     "imagemagick": "^0.1.3"
   }
