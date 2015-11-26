@@ -22,13 +22,21 @@
                 <h2>{{ title }}</h2>
                 <p>Nunjucks supports if then for</p>
                 <ol>
-                    {% for item in repos %}
-                        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                    {% for student in students %}
+                        <li><strong>{{ student.name }}</strong> studies <strong>{{ student.major }}</strong></li>
                     {% endfor %}
                 </ol>
+                <p>
+                    Demo filer<br>
+                {% filter title %}
+                    every word in this text will be uppercase because of filer title
+                {% endfilter %}
+                </p>
+                <p>
                 {% raw %}
                 Raw text will {{ not be processed }}
                 {% endraw %}
+                </p>
                 <p>See <code>/public/themes/minimum/logic.twig</code></p>
             </div><!--/.col-sm-6-->
         </div>

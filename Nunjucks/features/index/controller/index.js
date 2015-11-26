@@ -4,11 +4,16 @@ module.exports = function (controller,component,application) {
     /**
      * Render index view with links to other views
      */
-    let repos = [
-        { name: 'arrowjs core', url: 'https://github.com/arrowjs/ArrowjsCore' }
-        , { name: 'arrowjs cms', url: 'https://github.com/arrowjs/ArrowCMS' }
-        , { name: 'examples', url: 'https://github.com/arrowjs/examples' }
-        , { name: 'documents', url: 'https://github.com/arrowjs/Documents' }
+    let students = [
+        { name: 'Jeremy Falcon', major: 'Math' },
+        { name: 'Henry Kissinger', major: 'English' },
+        { name: 'Cataliano Jira', major: 'Math' },
+        { name: 'Philips Sikas', major: 'Computer Science' },
+        { name: 'Vons Batura', major: 'English' },
+        { name: 'Helena Viera', major: 'Computer Science' },
+        { name: 'Ada Lovelace', major: 'Physics' },
+        { name: 'Ivan Rullian', major: 'English' },
+        { name: 'Merks Isca', major: 'Physics' }
     ];
 
     controller.index = function (req,res) {
@@ -31,7 +36,7 @@ module.exports = function (controller,component,application) {
         )
     };
     controller.logic = function (req,res) {
-        res.render('logic', {repos: repos});
+        res.render('logic', {students: students});
     };
 
     controller.inherit = function (req,res) {
