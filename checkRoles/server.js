@@ -1,5 +1,5 @@
 "use strict";
-let Arrow  = require('../..');
+let Arrow  = require('arrowjs');
 
 let Application = new Arrow();
 
