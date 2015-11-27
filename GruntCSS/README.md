@@ -7,6 +7,9 @@ To run this example:
 ```
 npm install
 npm start
-```
+``` 
 
 Browse to `http://localhost:8000`
+
+##Fix error 'grunt: command not found'
+```sudo npm install -g grunt-cli```
