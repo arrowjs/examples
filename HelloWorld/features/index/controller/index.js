@@ -4,7 +4,12 @@ module.exports = function (controller,component,application) {
     /**
      * Render index view with links to other views
      */
+    
     controller.index = function (req,res) {
+        console.log(controller);
+        console.log('APP===========================');
+        //console.log(application);
+        console.log('ENDAPP====================================');
         res.render('index',
             {
                 title: 'Hello World app',
@@ -20,6 +25,8 @@ module.exports = function (controller,component,application) {
      * Render about view using Nunjuck template
      */
     controller.about = function (req,res) {
+        console.log(component);
+        console.log('ENDCOMP====================================');
         res.render('about',
             {
                 title: 'About Arrowjs.io',
@@ -30,6 +37,7 @@ module.exports = function (controller,component,application) {
      * return JSON list of github repositories of Arrowjs.io
      */
     controller.repos = function(req, res) {
+        console.log(controller);
         let repos = [
             { name: 'arrowjs core', url: 'https://github.com/arrowjs/ArrowjsCore' }
             , { name: 'arrowjs cms', url: 'https://github.com/arrowjs/ArrowCMS' }

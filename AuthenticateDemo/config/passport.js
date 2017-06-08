@@ -15,6 +15,7 @@ module.exports = function (passport, application) {
             });
         },
         checkAuthenticate : function (req,res,next) {
+            console.log('Go to checkAuthenticate');
             if(req.isAuthenticated()){
                 return next();
             } else {
@@ -22,6 +23,7 @@ module.exports = function (passport, application) {
             }
         },
         handlePermission : function (permission,req,res,next) {
+            console.log('Go to handlePermission');
             if(permission) {
               return  next()
             }
@@ -32,7 +34,9 @@ module.exports = function (passport, application) {
             strategy : 'local',
             option: {
                 successRedirect: '/',
-                failureRedirect: '/login'
+                failureRedirect: '/login', 
+                failureFlash: true // allow flash messages
+
             }
         },
         'facebook1': {

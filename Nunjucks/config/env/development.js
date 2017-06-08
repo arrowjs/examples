@@ -1,9 +1,13 @@
 'use strict';
 
 module.exports = {
-    redis: {
+    db: {
         host: 'localhost',
-        port: '6379',
-        type: 'fakeredis'
+        port: '5432',
+        database: 'arrowjs',
+        username: 'postgres',
+        password: 'abc',
+        dialect: 'postgres',
+        logging: false
     }
 };

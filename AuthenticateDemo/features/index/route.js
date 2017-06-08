@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function (component,application) {
+
     return  {
         "/login" : {
             get : {

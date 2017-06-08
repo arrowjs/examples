@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title></title>
 </head>
+
 <body>
-<h1>Login</h1>
-<form action="/login" method="post">
-    Username : <input type="text" name="username">
-    Password : <input type="password" name="password">
+  <h1>Login</h1>
+  <!--Display error message if logging in unsuccessfully-->
+  {% if failure %}
+  <p>{{ failure }} </p>
+  {% endif %}
+  <!--Display success message after signing up successfully-->
+  {% if success %}
+  <p>{{ success }} </p>
+  {% endif %}
+  <form action="/login" method="post">
+    Username : <input type="text" name="username"> Password : <input type="password" name="password">
     <input type="submit">
-</form>
+  </form>
 </body>
+
 </html>
