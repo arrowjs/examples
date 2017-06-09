@@ -1,7 +1,7 @@
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 module.exports = function (sequelize,Datatypes) {
-    var User = sequelize.define('user', {
+    let User = sequelize.define('user', {
         id : {
             type: Datatypes.INTEGER,
             primaryKey : true,
@@ -32,4 +32,4 @@ module.exports = function (sequelize,Datatypes) {
         }
     });
     return User
-}
+};

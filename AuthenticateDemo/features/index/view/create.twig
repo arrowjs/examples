@@ -6,6 +6,16 @@
 </head>
 <body>
 <h1>Create new account</h1>
+
+<!--Display error message if logging in unsuccessfully-->
+{% if failure %}
+    <p>{{ failure }} </p>
+{% endif %}
+
+<!--Display success message after signing up successfully-->
+{% if success %}
+    <p>{{ success }} </p>
+{% endif %}
 <form action="/create" method="post">
     Username : <input type="text" name="username">
     Password : <input type="password" name="password">

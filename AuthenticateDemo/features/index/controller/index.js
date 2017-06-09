@@ -4,17 +4,17 @@ module.exports = function (controller, component, application) {
 
     controller.loginView = function (req, res) {
         // adding flash message
-        console.log(req.session);
+        //console.log(req.session);
         res.render('login', { failure: req.session.flash.error, success: req.session.flash.success });
     };
 
     controller.createView = function (req, res) {
-        res.render('create');
+        res.render('create', { failure: req.session.flash.error, success: req.session.flash.success });
     };
 
     controller.create = function (req, res) {
-        var username = req.body.username;
-        var password = req.body.password;
+        let username = req.body.username;
+        let password = req.body.password;
         component.models.user.find({
             where: {
                 username: username
@@ -23,7 +23,8 @@ module.exports = function (controller, component, application) {
             if (result) { 
                 //return res.send('Username already exists'); 
                 req.flash.error('Username already exists');
-                res.redirect('/');
+                res.redirect('/create');
+                return false;
             }
             component.models.user.create({
                 username: username,
