@@ -6,21 +6,30 @@ In this example, an Arrowjs web application gets RSS feed from 03 ways:
 2. Call to remote [socket server](http://www.actionherojs.com/docs/#socket-server) powered by [ActionHero](http://www.actionherojs.com/)
 3. Call to web service powered by ActionHero
 
+## Chạy ví dụ
 
-There are two sub folders in this example:
-
-1- Consumer: Arrowjs web application. To run then browse to localhost:8000
+1- Consumer
 
 ```
+cd Consumer/
 npm install
 node server.js
 ```
-2- ActionHero: Server. To run 
+2- ActionHero
 
 ```
+cd Actionhero
 npm install
 npm start
 ```
+
+3) Chạy app
+
+```
+npm start
+```
+
+[http://localhost:8000](http://localhost:8000)
 
 In Consumer\features folder there are 03 features:
 

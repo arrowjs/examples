@@ -69,7 +69,7 @@
     $('#fileToUpload').fileinput({
         showPreview: false
     });
-    var files;
+    let files;
     $('input[type=file]').on('change', prepareUpload);
     // Grab the files and set them to our variable
     function prepareUpload(event) {
@@ -84,7 +84,7 @@
         event.preventDefault(); // Totally stop stuff happening
         // START A LOADING SPINNER HERE
         // Create a formdata object and add the files
-        var data = new FormData();
+        let data = new FormData();
         $.each(files, function (key, value) {
             data.append(key, value);
         });

@@ -5,6 +5,7 @@ module.exports = function (controller, component, application) {
     controller.loginView = function (req, res) {
         // adding flash message
         //console.log(req.session);
+                console.log(req.flash)
         res.render('login', { failure: req.session.flash.error, success: req.session.flash.success });
     };
 

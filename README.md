@@ -1,21 +1,22 @@
 Arrowjs.io examples
 ==================
-To run HelloWorld example:
+Download:
 ```sh
 git clone https://github.com/arrowjs/examples.git
-cd examples
-cd HellWorld
-npm install
-npm start
 ```
-Open web browser then navigate to http://localhost:9000
+Open web browser then navigate to http://localhost:8000
 
 
 List of complete examples:
-* [HelloWorld](https://github.com/arrowjs/examples/tree/master/HelloWorld)
+* [AuthenticateDemo](https://github.com/arrowjs/examples/tree/master/AuthenticateDemo)
+* [GruntCSS](https://github.com/arrowjs/examples/tree/master/GruntCSS)
 * [HelloTheme](https://github.com/arrowjs/examples/tree/master/HelloTheme)
+* [HelloWorld](https://github.com/arrowjs/examples/tree/master/HelloWorld)
+* [Microservice](https://github.com/arrowjs/examples/tree/master/Microservice)
+* [Nunjucks](https://github.com/arrowjs/examples/tree/master/Nunjucks)
 * [Switching themes](https://github.com/arrowjs/examples/tree/master/SwitchTheme)
 * [Upload](https://github.com/arrowjs/examples/tree/master/Upload)
 * [Upload-Blueimp](https://github.com/arrowjs/examples/tree/master/Upload-Blueimp)
-* [GruntCSS](https://github.com/arrowjs/examples/tree/master/GruntCSS)
 * [ZeroMQ](https://github.com/arrowjs/examples/tree/master/ZeroMQ)
+* [ZeromqSocketio](https://github.com/arrowjs/examples/tree/master/ZeromqSocketio)
+* [checkRoles](https://github.com/arrowjs/examples/tree/master/checkRoles)

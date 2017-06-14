@@ -14,15 +14,19 @@ module.exports = function (controller,component,application) {
     };
 
     controller.localCall = function (req,res) {
-        let rssReq = request('http://vnexpress.net/rss/the-gioi.rss');
+        let URL = 'http://vnexpress.net/rss/the-gioi.rss';
+        let rssReq = request(URL);
         let feedparser = new FeedParser({normalize: true, addmeta: false});
-        var data = [];
+        let data = [];
         rssReq.on('error', function (error) {
-            logger.error(error);
+            //logger.error(error);
+            data = [{title: 'Error: Cannot connect to ' + URL}]
+            res.render('local', {rss: data});
+            //res.send('Error: Can not connect to ' + URL)
         });
 
         rssReq.on('response', function (res) {
-            var stream = this;
+            let stream = this;
 
             if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
 

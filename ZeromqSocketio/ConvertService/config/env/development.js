@@ -2,13 +2,13 @@
 
 module.exports = {
     long_stack : true,
-    port: process.env.PORT || 8000,
+    port: process.env.PORT || 5555,
     db: {
         host: 'localhost',
-        port: '5432',
-        database: 'db_name',
-        username: 'db_username',
-        password: 'db_password',
+        port: '5433',
+        database: 'authenticate',
+        username: 'postgres',
+        password: 'abc',
         dialect: 'postgres',
         logging: false
     },

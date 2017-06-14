@@ -3,7 +3,6 @@
 const formidable = require('formidable');
 const fs = require('fs-extra');
 const util = require('util');
-
 module.exports = function (controller, component, application) {
     const uploadPath = application.arrFolder + 'public/upload/';
 
@@ -43,10 +42,12 @@ module.exports = function (controller, component, application) {
         form.uploadDir = uploadPath;
         form.keepExtensions = true;
 
+        //console.log(form)
+
         form.parse(req, function (err, fields, files) {
-            //res.writeHead(200, {'content-type': 'text/plain'});
-            //res.write('received upload:\n\n');
-            //res.end(util.inspect({fields: fields, files: files}));
+            // res.writeHead(200, {'content-type': 'text/plain'});
+            // res.write('received upload:\n\n');
+            // res.end(util.inspect({fields: fields, files: files}));
         });
 
         form.on('progress', function (bytesReceived, bytesExpected) {
@@ -54,16 +55,17 @@ module.exports = function (controller, component, application) {
             let progress = percent_complete.toFixed(2);
             console.log("--> ", progress);
         });
-
         form.on('fileBegin', function (name, file) {
             // update name file
             file.path = uploadPath + file.name;
+        });
+        form.on('end', function () {
             res.redirect('/');
         });
     };
 
 
-    controller.downloadFile = function (req, res, next) {
+    controller.downloadFile = function (req, res, next  ) {
         console.log("download file : ", req.params.file);
 
         // example dowload 1

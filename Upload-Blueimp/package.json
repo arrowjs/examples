@@ -22,6 +22,6 @@
   "homepage": "https://github.com/arrowjs/arr_examples#readme",
   "dependencies": {
     "arrowjs": "latest",
-    "jquery-file-upload-middleware": "^0.1.7"
+    "jquery-file-upload-middleware": "^0.1.8"
   }
 }

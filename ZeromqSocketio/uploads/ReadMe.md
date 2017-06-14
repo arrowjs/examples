@@ -1,1 +1,1 @@
-Uploaded photos will be stored here
+#Uploaded photos will be stored here

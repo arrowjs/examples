@@ -11,9 +11,11 @@ module.exports = function (controller,component,application) {
         res.render('post');
     };
     controller.role = function (req,res) {
+        //console.log(req.session.permissions);
         res.render('role');
     };
     controller.rolePost = function (req,res) {
+
         req.session.permissions = {
             features : {
                 index :  [{
@@ -25,8 +27,10 @@ module.exports = function (controller,component,application) {
                 }]
             }
         }
+        //console.log(component);
+        //console.log(controller);
+        //console.log(req.session.permissions.features.index);
         req.flash.success("Change role successfully");
         res.render('role');
     };
 };
-

@@ -13,9 +13,10 @@
   "author": "Trinh Minh Cuong",
   "license": "MIT",
   "dependencies": {
+    "actionhero-client": "^5.0.0",
     "arrowjs": "*",
-    "actionhero-client": "^4.0.0",
-    "feedparser": "^1.1.4",
-    "request": "^2.67.0"
+    "feedparser": "^2.2.0",
+    "request": "^2.81.0",
+    "status-check": "0.0.17"
   }
 }

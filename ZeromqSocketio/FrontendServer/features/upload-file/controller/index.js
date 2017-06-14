@@ -38,6 +38,8 @@ module.exports = function (controller, component, application) {
         form.parse(req, function (err,fields,files) {
             if(fields.socketId) {
                 socketId = fields.socketId;
+            }else{
+                socketId = req.cookies.io;
             }
         });
         form.on('progress', function (bytesReceived, bytesExpected) {
@@ -51,7 +53,7 @@ module.exports = function (controller, component, application) {
         });
 
         form.on("end", function () {
-            res.send({link: fileName});
+
             application.services.convertImage.send({
                 action: "image.convert",
                 data: {
@@ -64,6 +66,7 @@ module.exports = function (controller, component, application) {
                     application.io.to(socketId).emit("converted", data)
                 }
             })
+            res.send({link: fileName});
         })
     };
 

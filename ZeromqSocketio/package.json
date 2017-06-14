@@ -9,9 +9,10 @@
   "author": "Tran Quoc Cuong <trquoccuong@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "arrowjs" : "*",
-    "arrow-zeromq": "*",
-    "formidable": "^1.0.17",
+    "arrow-zeromq": "0.0.4",
+    "arrowjs": "^0.5.0",
+    "formidable": "^1.1.1",
+    "gm": "^1.23.0",
     "imagemagick": "^0.1.3"
   }
 }

@@ -71,20 +71,20 @@
     </div>
 </div>
 </body>
-{#<script>#}
-    {#$("#fileToUpload").fileinput({#}
-        {#uploadUrl: "/",#}
-        {#allowedFileExtensions: ["jpg", "png", "gif"],#}
-        {#maxImageHeight: 150,#}
-        {#maxFileCount: 1,#}
-        {#resizeImage: true#}
-    {#}).on('filepreupload', function () {#}
-        {#$('#kv-success-box').html('');#}
-    {#}).on('fileuploaded', function (event, data) {#}
-        {#$('#kv-success-box').append(data.response.link);#}
-        {#$('#kv-success-modal').modal('show');#}
-    {#});#}
-{#</script>#}
+<script>
+//    $("#fileToUpload").fileinput({
+//        uploadUrl: "/",
+//        //allowedFileExtensions: ["jpg", "png", "gif"],
+//        maxImageHeight: 150,
+//        maxFileCount: 20,
+//        resizeImage: true
+//    }).on('filepreupload', function () {
+//        $('#kv-success-box').html('');
+//    }).on('fileuploaded', function (event, data) {
+//        $('#kv-success-box').append(data.response.link);
+//        $('#kv-success-modal').modal('show');
+//    });
+</script>
 <script>
     $('#file-fr').fileinput({
         language: 'fr',

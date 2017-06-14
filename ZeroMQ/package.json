@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "arrow-zeromq": "0.0.3",
-    "arrowjs": "^0.3.16"
+    "arrow-zeromq": "0.0.4",
+    "arrowjs": "^0.5.0"
   }
 }

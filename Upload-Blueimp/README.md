@@ -1,15 +1,58 @@
 Arrowjs.io examples
 ==================
-To run Demo Upload-Blueimp example:
-```sh
-git clone https://github.com/arrowjs/examples.git
-cd examples
-cd Upload-Blueimp
-npm install i
-node server.js
-```
-Open web browser then navigate to http://localhost:8000
 
+## Chạy ví dụ
+1) Cài đặt node_modules
+```
+cd Upload-Blueimp
+npm i
+```
+
+2) Cấu hình CSDL (config/env/development.js)
+
+```
+db: {
+    host: 'localhost',          // host
+    port: '5433',               // Cổng 
+    database: 'authenticate',   // Tên database
+    username: 'postgres',       // username kết nối đến database
+    password: 'abc',            // password kết nối đến database
+    dialect: 'postgres',        // Nếu sử dụng postgres thì để 'postgres'
+    logging: false
+},
+```
+
+3) Chạy app
+
+```
+npm start
+```
+
+[http://localhost:8000](http://localhost:8000)
+
+===================================
+## Rerun example and check errors
+* I installed and used npm-check-updates module to automatically check all dependencies in package.json and update to their latest versions
+```bash
+  npm i -g npm-check-updates
+  npm-check-updates -u
+  npm install
+```
+* Updates modules
+```bash
+ jquery-file-upload-middleware  ^0.1.7  →  ^0.1.8
+```
+## Workflow
+* Example Upload-blueimp folder structure 
+```bash
+.
+├── config
+├── features
+├── public
+├── package.json
+├── README.md
+└── server.js
+```
 
 Giới thiệu ví dụ Upload-Blueimp được lấy mẫu từ ví dụ : https://blueimp.github.io/jQuery-File-Upload/
 
